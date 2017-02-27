@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>else</title>
+
+
+</head>
+<body ng-app="ngRepeat">
+<div ng-controller="repeatController">
+    Поиск:
+    <input type="search" ng-model="q" placeholder="введите часть слова..." aria-label="find" />
+    <ul class="example-animate-container">
+
+        <div  class="animate-repeat" ng-repeat="link in else | filter:q as results">
+            {{$index + 1}} <a ng-href="./{{link.url}}.html"><i>{{link.else}}</i>
+            <br>
+            <a href="#second">второй странице</a></a>
+        </div>
+        <div ng-view></div>
+        <li class="animate-repeat" ng-if="results.length === 0">
+            <strong>Ничего не найдено... попробуйте изменить запрос</strong>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h2>Пример маршрутизации в AngularJS</h2>
+    <p>Перейти к <button><a href="#support">первой</a></button> или <button><a href="#second">второй странице</a></button>.</p>
+    <div ng-view></div>
+</div>
+
+<div ng-app="routingApp">
+    <p>
+       <button><a href="/roles/app/support.html">Назад</a>
+       <button><a href="/roles/app/quicklinks.html">Под рукой</a></button>
+    </p>
+    <div ng-view></div>
+</div>
+
+
+<link href="../../animations.css" rel="stylesheet" type="text/css">
+<script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+<script src="//code.angularjs.org/snapshot/angular-animate.js"></script>
+<script src="../../app.js"></script>
+<script src="../../ngRepeat.js"></script>
+<script src="else.js"></script>
+<script src="../../viewSupport.js"></script>
+<script src="../../script.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</body>
+</html>
+
+</body>
+</html>
